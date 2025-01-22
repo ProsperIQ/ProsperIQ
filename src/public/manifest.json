@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "ProsperIQ - AI Token Analysis",
+  "version": "1.0.0",
+  "description": "Real-time Solana token analysis and security scanning",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://*.raydium.io/*",
+    "https://*.orca.so/*",
+    "https://*.jup.ag/*",
+    "https://pump.fun/*",
+    "https://*.dexscreener.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.raydium.io/*",
+        "https://*.orca.so/*",
+        "https://*.jup.ag/*",
+        "https://pump.fun/*",
+        "https://*.dexscreener.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
